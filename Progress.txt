@@ -4,4 +4,4 @@
 	--Git hub installation
 	--Import twitter sentiment analysis (python assignment) to eclipse
 	--Based on location getting tweets
-	--City with coordinates are stored in a text file
+	--10 Cities with coordinates are stored in a text file "co-ordinates.txt"
