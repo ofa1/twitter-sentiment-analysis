@@ -1,10 +1,10 @@
-17.3660° N, 78.4760° E	Hyderabad
-12.9667° N, 77.5667° E	Banglore
-42.3482° N, 75.1890° W	Newyork
-51.5072° N, 0.1275°  W	London
-18.9750° N, 72.8258° E	Mumbai
-37.7833° N, 122.4167° W San francisco
-48.8567° N, 2.3508°  E	Paris
-33.8600° S, 151.2094° E sydney
-41.8369° N, 87.6847° W	Chicago
-53.4667° N, 2.2333° W	Manchester
+17.3660,78.4760 	Hyderabad
+12.9667,77.5667 	Banglore
+42.3482,-75.1890 	Newyork
+51.5072,-0.1275  	London
+18.9750,72.8258 	Mumbai
+37.7833,-122.4167 San fracisco
+48.8567,2.3508  	Paris
+-33.8600,151.2094  sydney
+41.8369,-87.6847 	Chicago
+53.4667,-2.2333 	Manchester
