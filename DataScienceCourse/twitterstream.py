@@ -52,11 +52,12 @@ def twitterreq(url, method, parameters):
 
 def fetchsamples():
 #   url = "https://api.twitter.com/1.1/search/tweets.json?&geocode=37.781157,-122.398720,1mi"
-  url = "https://stream.twitter.com/1.1/statuses/filter.json?delimited=length&track=twitter&locations=-122.75,36.8,-121.75,37.8"
+  locations = "-122.75,36.8,-121.75,37.8"
+  url = "https://stream.twitter.com/1.1/statuses/filter.json?delimited=length&language=en&locations="+locations
   parameters = []
   response = twitterreq(url, "GET", parameters)
   for line in response:
-    print line.strip()
+    print line.strip()["text"]
 
 if __name__ == '__main__':
   fetchsamples()
