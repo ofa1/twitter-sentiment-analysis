@@ -1,5 +1,6 @@
 import oauth2 as oauth
 import urllib2 as urllib
+import json
 
 # See assignment1.html instructions or README for how to get these credentials
 
@@ -52,12 +53,15 @@ def twitterreq(url, method, parameters):
 
 def fetchsamples():
 #   url = "https://api.twitter.com/1.1/search/tweets.json?&geocode=37.781157,-122.398720,1mi"
-  locations = "-122.75,36.8,-121.75,37.8"
-  url = "https://stream.twitter.com/1.1/statuses/filter.json?delimited=length&language=en&locations="+locations
+  locations = "-122.75,36.8,-121.75,37.8,-74,40,-73,41"
+  url = "https://stream.twitter.com/1.1/statuses/filter.json?language=en&locations="+locations
   parameters = []
   response = twitterreq(url, "GET", parameters)
   for line in response:
-    print line.strip()["text"]
+      if len(line) > 2:
+          temp = json.loads(line.strip())
+          print temp["place"]["full_name"].encode("utf-8")
+          print "--"
 
 if __name__ == '__main__':
   fetchsamples()
