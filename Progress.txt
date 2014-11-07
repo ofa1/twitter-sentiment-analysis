@@ -1,0 +1,7 @@
+[06-11-2014]  
+	--Project Discussion: Overview of project written in document
+[07-11-2014]   
+	--Git hub installation
+	--Import twitter sentiment analysis (python assignment) to eclipse
+	--Based on location getting tweets
+	--City with coordinates are stored in a text file
