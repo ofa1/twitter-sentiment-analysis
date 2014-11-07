@@ -5,3 +5,4 @@
 	--Import twitter sentiment analysis (python assignment) to eclipse
 	--Based on location getting tweets
 	--10 Cities with coordinates are stored in a text file "co-ordinates.txt"
+	--creating dictionary as "Cities" for cities with coordinates
