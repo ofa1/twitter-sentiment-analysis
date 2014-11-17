@@ -52,16 +52,43 @@ def twitterreq(url, method, parameters):
   return response
 
 def fetchsamples():
+#   Cities={"Hyderabad":"17.593743,78.206172,17.237332,78.673091",
+#  "Banglore":"13.147981,77.342548,13.147981,77.342548",
+# "Newyork":"40.883413,-74.288367,40.583716,-73.725318",     
+# "London":"51.738328,-0.606970,51.311118,0.392786",
+# "Mumbai":"19.272273,72.783700,18.999818,72.925149",    
+# "San fracisco":"37.835560,-122.495965,37.711270,-122.272118", 
+# "Paris":"48.892503,2.248183,48.822932,2.483702",
+# "sydney":"-33.438976,150.614815,-34.137468,151.095467", 
+# "Chicago":"42.014586,-87.960122,41.635948,-87.490456",
+# "Manchester":"53.536363,-2.410360,53.411305,-2.056051"}
+#
+#
 #   url = "https://api.twitter.com/1.1/search/tweets.json?&geocode=37.781157,-122.398720,1mi"
-  locations = "-122.75,36.8,-121.75,37.8,-74,40,-73,41"
-  url = "https://stream.twitter.com/1.1/statuses/filter.json?language=en&locations="+locations
+#   locations = "-122.75,36.8,-121.75,37.8,-74,40,-73,41"
+#   print Cities
+#   locations = ""
+#   for i in Cities.keys():
+#       locations += Cities[i]
+#       print i, " - ", Cities[i]
+#
+#
+#   locations = "-122.75,36.8,-121.75,37.8"
+  locations = "78.202052, 17.257005, 78.561854, 17.519112"
+#   locations = "-74.300727,40.509104,-73.772010, 40.903656"
+#   url = "https://stream.twitter.com/1.1/statuses/filter.json?language=en&locations="+locations
+  url = "https://api.twitter.com/1.1/search/tweets.json?q=ny&lang=en&geocode=40.509104,-74.300727,500km&count=100&result_type=popular"
+#   print locations
   parameters = []
   response = twitterreq(url, "GET", parameters)
+#   temp = json.loads(response.strip())
+#   print temp
   for line in response:
-      if len(line) > 2:
-          temp = json.loads(line.strip())
-          print temp["place"]["full_name"].encode("utf-8")
-          print "--"
+#       if len(line) > 2:
+        print line
+#           temp = json.loads(line.strip())
+#           print temp["place"]["full_name"].encode("utf-8", errors='ignore')
+#           print "--"
 
 if __name__ == '__main__':
   fetchsamples()
