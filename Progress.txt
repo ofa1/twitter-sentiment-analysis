@@ -9,3 +9,5 @@
 [17-11-2014]
     --Discussing about Database (which one to use and how to use)
     --Understanding and experimenting on co-ordinates of cities
+    --getting tweets based on popularity
+    --installed pymongo driver and checking
