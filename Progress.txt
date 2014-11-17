@@ -6,4 +6,5 @@
 	--Based on location getting tweets
 	--10 Cities with coordinates are stored in a text file "co-ordinates.txt"
 	--creating dictionary as "Cities" for cities with coordinates
-	
+[17-11-2014]
+    --Discussing about Database (which one to use and how to use)
