@@ -52,6 +52,10 @@ def twitterreq(url, method, parameters):
   return response
 
 def fetchsamples():
+#
+#
+#
+#
 #   Cities={"Hyderabad":"17.593743,78.206172,17.237332,78.673091",
 #  "Banglore":"13.147981,77.342548,13.147981,77.342548",
 # "Newyork":"40.883413,-74.288367,40.583716,-73.725318",     
@@ -74,11 +78,15 @@ def fetchsamples():
 #
 #
 #   locations = "-122.75,36.8,-121.75,37.8"
-  locations = "78.202052, 17.257005, 78.561854, 17.519112"
+#   locations = "78.202052, 17.257005, 78.561854, 17.519112"
 #   locations = "-74.300727,40.509104,-73.772010, 40.903656"
-#   url = "https://stream.twitter.com/1.1/statuses/filter.json?language=en&locations="+locations
-  url = "https://api.twitter.com/1.1/search/tweets.json?q=ny&lang=en&geocode=40.509104,-74.300727,500km&count=100&result_type=popular"
-#   print locations
+#
+#
+#
+#   url = "https://api.twitter.com/1.1/geo/search.json?lat=17.3660&long=78.4760&accuracy=50000&max_results=100000&granularity=city"
+  url = "https://api.twitter.com//1.1/search/tweets.json?q=place:243cc16f6417a167 since:2014-11-16 until:2014-11-17&lang=en&result_type=mixed&count=100"
+#
+# 
   parameters = []
   response = twitterreq(url, "GET", parameters)
 #   temp = json.loads(response.strip())
