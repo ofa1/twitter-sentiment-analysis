@@ -53,9 +53,6 @@ def twitterreq(url, method, parameters):
 
 def fetchsamples():
 #
-#
-#
-#
 #   Cities={"Hyderabad":"17.593743,78.206172,17.237332,78.673091",
 #  "Banglore":"13.147981,77.342548,13.147981,77.342548",
 # "Newyork":"40.883413,-74.288367,40.583716,-73.725318",     
@@ -66,20 +63,6 @@ def fetchsamples():
 # "sydney":"-33.438976,150.614815,-34.137468,151.095467", 
 # "Chicago":"42.014586,-87.960122,41.635948,-87.490456",
 # "Manchester":"53.536363,-2.410360,53.411305,-2.056051"}
-#
-#
-#   url = "https://api.twitter.com/1.1/search/tweets.json?&geocode=37.781157,-122.398720,1mi"
-#   locations = "-122.75,36.8,-121.75,37.8,-74,40,-73,41"
-#   print Cities
-#   locations = ""
-#   for i in Cities.keys():
-#       locations += Cities[i]
-#       print i, " - ", Cities[i]
-#
-#
-#   locations = "-122.75,36.8,-121.75,37.8"
-#   locations = "78.202052, 17.257005, 78.561854, 17.519112"
-#   locations = "-74.300727,40.509104,-73.772010, 40.903656"
 #
 #
 # To get place ids by giving lattitude and longitudes for a city
