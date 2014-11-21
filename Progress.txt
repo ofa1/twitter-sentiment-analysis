@@ -16,3 +16,5 @@
 	--two people work on tweets and remaining on database MongoDB
 	--worked on getting tweets
 	--installed database and practiced basic commands
+[21-11-2014]
+	--installed robomongo (GUI for mongoDB)
