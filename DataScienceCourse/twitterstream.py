@@ -77,11 +77,16 @@ def fetchsamples():
     #   print temp
       for line in response:
     #       if len(line) > 2:
-            print line
             temp = json.loads(line.strip())
             statuses = temp["statuses"]
+            t = ""
+            for status in statuses:
+                t += str(status) +"\n"
+            print t
             with open('statuses.json', 'w') as outfile:
+#                 for status in statuses:
                 json.dump(statuses, outfile)
+
 
 if __name__ == '__main__':
   fetchsamples()
