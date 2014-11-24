@@ -18,3 +18,6 @@
 	--installed database and practiced basic commands
 [21-11-2014]
 	--installed robomongo (GUI for mongoDB)
+	--practiced basic CRUD operations in robomongo
+[24-11-2014]
+	--working with tweets file and database 
