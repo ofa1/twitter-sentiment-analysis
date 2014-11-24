@@ -70,19 +70,18 @@ def fetchsamples():
 #
 #
 # To get tweets by giving place id and dates
-  url = "https://api.twitter.com//1.1/search/tweets.json?q=place:243cc16f6417a167 since:2014-11-16 until:2014-11-17&lang=en&result_type=mixed&count=100"
-#
-# 
-  parameters = []
-  response = twitterreq(url, "GET", parameters)
-#   temp = json.loads(response.strip())
-#   print temp
-  for line in response:
-#       if len(line) > 2:
-        print line
-#           temp = json.loads(line.strip())
-#           print temp["place"]["full_name"].encode("utf-8", errors='ignore')
-#           print "--"
+      url = "https://api.twitter.com//1.1/search/tweets.json?q=place:243cc16f6417a167 since:2014-11-16 until:2014-11-17&lang=en&result_type=mixed&count=100"
+      parameters = []
+      response = twitterreq(url, "GET", parameters)
+    #   temp = json.loads(response.strip())
+    #   print temp
+      for line in response:
+    #       if len(line) > 2:
+            print line
+            temp = json.loads(line.strip())
+            statuses = temp["statuses"]
+            with open('statuses.json', 'w') as outfile:
+                json.dump(statuses, outfile)
 
 if __name__ == '__main__':
   fetchsamples()
