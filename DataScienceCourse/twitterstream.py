@@ -27,29 +27,29 @@ Construct, sign, and open a twitter request
 using the hard-coded credentials above.
 '''
 def twitterreq(url, method, parameters):
-  req = oauth.Request.from_consumer_and_token(oauth_consumer,
-                                             token=oauth_token,
-                                             http_method=http_method,
-                                             http_url=url, 
-                                             parameters=parameters)
-
-  req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
-
-  headers = req.to_header()
-
-  if http_method == "POST":
-    encoded_post_data = req.to_postdata()
-  else:
-    encoded_post_data = None
-    url = req.to_url()
-
-  opener = urllib.OpenerDirector()
-  opener.add_handler(http_handler)
-  opener.add_handler(https_handler)
-
-  response = opener.open(url, encoded_post_data)
-
-  return response
+    req = oauth.Request.from_consumer_and_token(oauth_consumer,
+                                               token=oauth_token,
+                                               http_method=http_method,
+                                               http_url=url, 
+                                               parameters=parameters)
+    
+    req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
+    
+    headers = req.to_header()
+    
+    if http_method == "POST":
+        encoded_post_data = req.to_postdata()
+    else:
+        encoded_post_data = None
+        url = req.to_url()
+    
+    opener = urllib.OpenerDirector()
+    opener.add_handler(http_handler)
+    opener.add_handler(https_handler)
+    
+    response = opener.open(url, encoded_post_data)
+    
+    return response
 
 def fetchsamples():
 #
@@ -66,23 +66,29 @@ def fetchsamples():
 #
 #
 # To get place ids by giving lattitude and longitudes for a city
-#   url = "https://api.twitter.com/1.1/geo/search.json?lat=17.3660&long=78.4760&accuracy=50000&max_results=100000&granularity=city"
+#     url = "https://api.twitter.com/1.1/geo/search.json?lat=17.3660&long=78.4760&accuracy=50000&max_results=100000&granularity=city"
 #
+# Live streaming tweets 
+#     url = "https://stream.twitter.com/1.1/statuses/sample.json?q=locations=-122.75,36.8,-121.75,37.8,-74,40,-73,41&language=en"
 #
 # To get tweets by giving place id and dates
-      url = "https://api.twitter.com//1.1/search/tweets.json?q=place:243cc16f6417a167 since:2014-11-16 until:2014-11-17&lang=en&result_type=mixed&count=100"
-      parameters = []
-      response = twitterreq(url, "GET", parameters)
-    #   temp = json.loads(response.strip())
-    #   print temp
-      for line in response:
+    url = "https://api.twitter.com//1.1/search/tweets.json?q=place:243cc16f6417a167 since:\"2014-11-42\" until:\"2014-11-25\"&lang=en&result_type=mixed&count=100"
+    
+    
+    parameters = []
+    response = twitterreq(url, "GET", parameters)
+    
+    for line in response:
     #       if len(line) > 2:
-            temp = json.loads(line.strip())
-            statuses = temp["statuses"]
-            print statuses
-            with open('statuses.json', 'w') as outfile:
-                json.dump(statuses, outfile)
+        print line
+        temp = json.loads(line.strip())
+        statuses = temp["statuses"]
+        if len(statuses) == 0:
+            break
+#         print statuses
+        with open('statuses.json', 'w') as outfile:
+            json.dump(statuses, outfile)
 
 
 if __name__ == '__main__':
-  fetchsamples()
+    fetchsamples()
