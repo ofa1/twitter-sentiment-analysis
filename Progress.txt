@@ -21,3 +21,7 @@
 	--practiced basic CRUD operations in robomongo
 [24-11-2014]
 	--working with tweets file and database 
+[25-11-2014]
+	--working with database (How to retrieve tweets
+	--watching mongodb videos
+	--working with twitter APIs 
