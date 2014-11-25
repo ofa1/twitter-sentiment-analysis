@@ -22,6 +22,7 @@
 [24-11-2014]
 	--working with tweets file and database 
 [25-11-2014]
-	--working with database (How to retrieve tweets
+	--working with database (How to retrieve tweets)
 	--watching mongodb videos
-	--working with twitter APIs 
+	--working with twitter APIs and find out limitation (It will give only one week tweets)
+	--installation of tweepy
