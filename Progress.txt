@@ -26,3 +26,6 @@
 	--watching mongodb videos
 	--working with twitter APIs and find out limitation (It will give only one week tweets)
 	--installation of tweepy
+[26-11-2014]
+	--watching remaining videos
+	
